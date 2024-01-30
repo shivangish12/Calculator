@@ -3,6 +3,22 @@ import "./App.css";
 
 function App() {
   const [value, setValue] = useState("");
+  const [result, setResult] = useState("");
+
+  const handleButtonClick = (buttonValue) => {
+    if (buttonValue === "=") {
+      try {
+        setResult(eval(value));
+      } catch (error) {
+        setResult("Error");
+      }
+    } else if (buttonValue === "C") {
+      setValue("");
+      setResult("");
+    } else {
+      setValue(value + buttonValue);
+    }
+  };
 
   return (
     <div>
@@ -11,93 +27,99 @@ function App() {
         <div className="calculator">
           <form action="">
             <div className="display">
-              <input type="text" value={value} />
+              <input type="text" value={value} readOnly />
+            </div>
+            <div className="result">
+              <p>{result}</p>
             </div>
             <div className="buttons">
               <div>
                 <input
                   type="button"
                   value="7"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("7")}
                 />
                 <input
                   type="button"
                   value="8"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("8")}
                 />
                 <input
                   type="button"
                   value="9"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("9")}
                 />
                 <input
                   type="button"
                   value="+"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("+")}
                 />
               </div>
               <div>
                 <input
                   type="button"
                   value="4"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("4")}
                 />
                 <input
                   type="button"
                   value="5"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("5")}
                 />
                 <input
                   type="button"
                   value="6"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("6")}
                 />
                 <input
                   type="button"
                   value="-"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("-")}
                 />
               </div>
               <div>
                 <input
                   type="button"
                   value="1"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("1")}
                 />
                 <input
                   type="button"
                   value="2"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("2")}
                 />
                 <input
                   type="button"
                   value="3"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("3")}
                 />
                 <input
                   type="button"
                   value="*"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("*")}
                 />
               </div>
               <div>
-                <input type="button" value="C" onClick={(e) => setValue("")} />
-
+                <input
+                  type="button"
+                  value="C"
+                  onClick={() => handleButtonClick("C")}
+                />
                 <input
                   type="button"
                   value="0"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("0")}
                 />
                 <input
                   type="button"
                   value="="
                   className="equal"
-                  onClick={(e) => setValue(eval(value))}
+                  onClick={() => handleButtonClick("=")}
                 />
                 <input
                   type="button"
                   value="/"
-                  onClick={(e) => setValue(value + e.target.value)}
+                  onClick={() => handleButtonClick("/")}
                 />
               </div>
             </div>
