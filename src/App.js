@@ -29,97 +29,129 @@ function App() {
             <input type="text" value={value} readOnly />
 
             <div className="result">{result}</div>
-            <button className="buttons">
+            <div className="buttons">
               <div>
-                <input
-                  type="button"
-                  value="7"
-                  onClick={() => handleButtonClick("7")}
-                />
-                <input
-                  type="button"
-                  value="8"
-                  onClick={() => handleButtonClick("8")}
-                />
-                <input
-                  type="button"
-                  value="9"
-                  onClick={() => handleButtonClick("9")}
-                />
-                <input
-                  type="button"
-                  value="+"
-                  onClick={() => handleButtonClick("+")}
-                />
+                <button>
+                  <input
+                    type="button"
+                    value="7"
+                    onClick={() => handleButtonClick("7")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="8"
+                    onClick={() => handleButtonClick("8")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="9"
+                    onClick={() => handleButtonClick("9")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="+"
+                    onClick={() => handleButtonClick("+")}
+                  />
+                </button>
               </div>
               <div>
-                <input
-                  type="button"
-                  value="4"
-                  onClick={() => handleButtonClick("4")}
-                />
-                <input
-                  type="button"
-                  value="5"
-                  onClick={() => handleButtonClick("5")}
-                />
-                <input
-                  type="button"
-                  value="6"
-                  onClick={() => handleButtonClick("6")}
-                />
-                <input
-                  type="button"
-                  value="-"
-                  onClick={() => handleButtonClick("-")}
-                />
+                <button>
+                  <input
+                    type="button"
+                    value="4"
+                    onClick={() => handleButtonClick("4")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="5"
+                    onClick={() => handleButtonClick("5")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="6"
+                    onClick={() => handleButtonClick("6")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="-"
+                    onClick={() => handleButtonClick("-")}
+                  />
+                </button>
               </div>
               <div>
-                <input
-                  type="button"
-                  value="1"
-                  onClick={() => handleButtonClick("1")}
-                />
-                <input
-                  type="button"
-                  value="2"
-                  onClick={() => handleButtonClick("2")}
-                />
-                <input
-                  type="button"
-                  value="3"
-                  onClick={() => handleButtonClick("3")}
-                />
-                <input
-                  type="button"
-                  value="*"
-                  onClick={() => handleButtonClick("*")}
-                />
+                <button>
+                  <input
+                    type="button"
+                    value="1"
+                    onClick={() => handleButtonClick("1")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="2"
+                    onClick={() => handleButtonClick("2")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="3"
+                    onClick={() => handleButtonClick("3")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="*"
+                    onClick={() => handleButtonClick("*")}
+                  />
+                </button>
               </div>
               <div>
-                <input
-                  type="button"
-                  value="C"
-                  onClick={() => handleButtonClick("C")}
-                />
-                <input
-                  type="button"
-                  value="0"
-                  onClick={() => handleButtonClick("0")}
-                />
-                <input
-                  type="button"
-                  value="="
-                  className="equal"
-                  onClick={() => handleButtonClick("=")}
-                />
-                <input
-                  type="button"
-                  value="/"
-                  onClick={() => handleButtonClick("/")}
-                />
+                <button>
+                  <input
+                    type="button"
+                    value="C"
+                    onClick={() => handleButtonClick("C")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="0"
+                    onClick={() => handleButtonClick("0")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="="
+                    className="equal"
+                    onClick={() => handleButtonClick("=")}
+                  />
+                </button>
+                <button>
+                  <input
+                    type="button"
+                    value="/"
+                    onClick={() => handleButtonClick("/")}
+                  />
+                </button>
               </div>
-            </button>
+            </div>
           </form>
         </div>
       </div>
