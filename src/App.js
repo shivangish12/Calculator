@@ -29,7 +29,7 @@ function App() {
             <input type="text" value={value} readOnly />
 
             <div className="result">{result}</div>
-            <div className="buttons">
+            <button className="buttons">
               <div>
                 <input
                   type="button"
@@ -119,7 +119,7 @@ function App() {
                   onClick={() => handleButtonClick("/")}
                 />
               </div>
-            </div>
+            </button>
           </form>
         </div>
       </div>
