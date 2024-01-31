@@ -29,9 +29,7 @@ function App() {
             <div className="display">
               <input type="text" value={value} readOnly />
             </div>
-            <div className="result">
-              <p>{result}</p>
-            </div>
+            <div className="result">{result}</div>
             <div className="buttons">
               <div>
                 <input
