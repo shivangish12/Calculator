@@ -6,14 +6,12 @@ function App() {
   const [result, setResult] = useState("");
 
   const handleButtonClick = (buttonValue, event) => {
-    event.preventDefault(); // Prevents the default form submission behavior
+    event.preventDefault();
 
     if (buttonValue === "=") {
       try {
         const evalResult = eval(value);
-        setResult(
-          Number.isFinite(evalResult) ? evalResult.toString() : "Error"
-        );
+        setResult(handleEvaluationResult(evalResult));
       } catch (error) {
         setResult("Error");
       }
@@ -25,19 +23,26 @@ function App() {
     }
   };
 
-  const handleDivisionByZero = () => {
-    setValue("");
-    setResult("Infinity");
-  };
-
   const handleEqualsClick = (event) => {
-    event.preventDefault(); // Prevents the default form submission behavior
+    event.preventDefault();
 
     try {
       const evalResult = eval(value);
-      setResult(Number.isFinite(evalResult) ? evalResult.toString() : "Error");
+      setResult(handleEvaluationResult(evalResult));
     } catch (error) {
       setResult("Error");
+    }
+  };
+
+  const handleEvaluationResult = (evalResult) => {
+    if (evalResult === Infinity) {
+      return "Infinity";
+    } else if (Number.isNaN(evalResult)) {
+      return "NaN";
+    } else if (Number.isFinite(evalResult)) {
+      return evalResult.toString();
+    } else {
+      return "Error";
     }
   };
 
