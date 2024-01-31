@@ -69,15 +69,19 @@ function App() {
                 ))}
               </div>
               <div>
-                {["C", 0, "="].map((item) => (
+                <button onClick={() => handleButtonClick("/")}>/</button>
+                {[0, "=", "C"].map((item) => (
                   <button
                     key={item}
-                    onClick={() => handleButtonClick(item.toString())}
+                    onClick={() =>
+                      item === "/"
+                        ? handleDivisionByZero()
+                        : handleButtonClick(item.toString())
+                    }
                   >
                     {item}
                   </button>
                 ))}
-                <button onClick={() => handleButtonClick("/")}>/</button>
               </div>
             </div>
           </form>
