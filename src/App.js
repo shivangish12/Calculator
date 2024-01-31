@@ -26,7 +26,7 @@ function App() {
       <div className="container">
         <div className="calculator">
           <form action="">
-            <input type="text" value={value} readOnly />
+            <input type="text" value={value} />
 
             <div className="result">{result}</div>
             <div className="buttons">
