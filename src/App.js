@@ -25,131 +25,50 @@ function App() {
       <h1>React Calculator</h1>
       <div className="container">
         <div className="calculator">
-          <form action="">
-            <input type="text" value={value} />
+          <form>
+            <input type="text" value={value} readOnly />
 
             <div className="result">{result}</div>
             <div className="buttons">
               <div>
-                <button>
-                  <input
-                    type="button"
-                    value="7"
-                    onClick={() => handleButtonClick("7")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="8"
-                    onClick={() => handleButtonClick("8")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="9"
-                    onClick={() => handleButtonClick("9")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="+"
-                    onClick={() => handleButtonClick("+")}
-                  />
-                </button>
+                {[7, 8, 9, "+"].map((number) => (
+                  <button
+                    key={number}
+                    onClick={() => handleButtonClick(number.toString())}
+                  >
+                    {number}
+                  </button>
+                ))}
               </div>
               <div>
-                <button>
-                  <input
-                    type="button"
-                    value="4"
-                    onClick={() => handleButtonClick("4")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="5"
-                    onClick={() => handleButtonClick("5")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="6"
-                    onClick={() => handleButtonClick("6")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="-"
-                    onClick={() => handleButtonClick("-")}
-                  />
-                </button>
+                {[4, 5, 6, "-"].map((number) => (
+                  <button
+                    key={number}
+                    onClick={() => handleButtonClick(number.toString())}
+                  >
+                    {number}
+                  </button>
+                ))}
               </div>
               <div>
-                <button>
-                  <input
-                    type="button"
-                    value="1"
-                    onClick={() => handleButtonClick("1")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="2"
-                    onClick={() => handleButtonClick("2")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="3"
-                    onClick={() => handleButtonClick("3")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="*"
-                    onClick={() => handleButtonClick("*")}
-                  />
-                </button>
+                {[1, 2, 3, "*"].map((number) => (
+                  <button
+                    key={number}
+                    onClick={() => handleButtonClick(number.toString())}
+                  >
+                    {number}
+                  </button>
+                ))}
               </div>
               <div>
-                <button>
-                  <input
-                    type="button"
-                    value="C"
-                    onClick={() => handleButtonClick("C")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="0"
-                    onClick={() => handleButtonClick("0")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="="
-                    className="equal"
-                    onClick={() => handleButtonClick("=")}
-                  />
-                </button>
-                <button>
-                  <input
-                    type="button"
-                    value="/"
-                    onClick={() => handleButtonClick("/")}
-                  />
-                </button>
+                {["C", 0, "=", "/"].map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => handleButtonClick(item.toString())}
+                  >
+                    {item}
+                  </button>
+                ))}
               </div>
             </div>
           </form>
