@@ -9,7 +9,9 @@ function App() {
     if (buttonValue === "=") {
       try {
         const evalResult = eval(value);
-        setResult(evalResult.toString());
+        setResult(
+          Number.isFinite(evalResult) ? evalResult.toString() : "Error"
+        );
       } catch (error) {
         setResult("Error");
       }
@@ -19,6 +21,11 @@ function App() {
     } else {
       setValue((prevValue) => prevValue + buttonValue);
     }
+  };
+
+  const handleDivisionByZero = () => {
+    setValue("");
+    setResult("Infinity");
   };
 
   return (
@@ -62,7 +69,7 @@ function App() {
                 ))}
               </div>
               <div>
-                {["C", 0, "=", "/"].map((item) => (
+                {["C", 0, "="].map((item) => (
                   <button
                     key={item}
                     onClick={() => handleButtonClick(item.toString())}
@@ -70,6 +77,7 @@ function App() {
                     {item}
                   </button>
                 ))}
+                <button onClick={() => handleButtonClick("/")}>/</button>
               </div>
             </div>
           </form>
